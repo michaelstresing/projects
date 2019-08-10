@@ -1,0 +1,32 @@
+#Creates an html webpage based on a rawfile of a title and paragraph.
+
+import os
+from os import listdir
+
+#rawfiles = os.listdir('/Users/michaelstresing/Desktop/CodingNomads/projects/html_maker/rawfiles')
+#print(rawfiles)
+
+#for  in rawfiles:
+
+with open('/Users/michaelstresing/Desktop/CodingNomads/projects/html_maker/rawfiles/london.txt', 'r') as file:
+    title = file.readline().rstrip()
+    body = file.readlines()[1:]
+
+    with open(f'{file}.html', 'w') as page:
+        page.write(f'''
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset=UTF-8
+        <title>{title}</title>
+        </head>
+
+        <body>
+        {body}
+        </body>
+
+        </html>
+        ''')
+
+
+
