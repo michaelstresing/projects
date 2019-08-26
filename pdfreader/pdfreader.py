@@ -1,5 +1,5 @@
 from tika import parser
-
+import pdb
 
 def get_words(document):
     """
@@ -20,6 +20,7 @@ def get_words(document):
     print(lowercasewords)
     return lowercasewords
 
+
 def Check_for_financial_activity(list):
     """
     Checks the word list from get_words for potential issue words relating to fintech companies.
@@ -34,17 +35,20 @@ def Check_for_financial_activity(list):
                  'robinhood',
                  'securities',
                  'algorithmic trading',
-                 'insure', 'financial',
+                 'insure',
+                 'financial',
                  'professional services',
                  'roboadvisor',
                  'fintech']
 
     for word in list:
         if word in flagwords:
-            print('There maybe financial activity present.')
+            print('There may be financial activity present.')
         else:
             print('.')
 
+#use sets (command that will check if something is in a list) avoiding for loops wherever possible (time efficiency)
+# assertin -> assertIn('exchange_id', dir(market) 
 
 def Check_for_sufficient_risks(list):
     """
@@ -87,6 +91,7 @@ def Check_for_blockchain(list):
         else:
             print('.')
 
+
 def Check_for_groups(list):
     """
     Checks the word list from get_words for potential issue words relating to group structures.
@@ -106,6 +111,8 @@ def Check_for_groups(list):
         else:
             print('.')
 
+Check_for_financial_activity(get_words('example.pdf'))
+
 
 '''current issues + features: 
 
@@ -118,6 +125,8 @@ def Check_for_groups(list):
     flagged word was in the list, as a percentage of the way through the document?. 
     
     4. Writing tests. 
+    
+    --> sys.argv[0,1 etc..]
 '''
 
 # ==================

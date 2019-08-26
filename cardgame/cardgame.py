@@ -25,8 +25,7 @@ class Deck:
         for suit in ["Spades", "Hearts", "Clubs", "Diamonds"]:
             for number in range(1,14):
                 self.cards.append(Card(suit, number))
-
-#    print("Deck done!")
+    #    print("Deck done!")
 
     def show(self):
 
@@ -35,5 +34,5 @@ class Deck:
 
 
     def shuffle(self):
-
+        i =
         for
